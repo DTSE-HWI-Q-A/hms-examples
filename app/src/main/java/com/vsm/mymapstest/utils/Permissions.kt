@@ -8,7 +8,7 @@ import androidx.core.app.ActivityCompat
 
 class Permissions {
     fun hasPermissions(
-        context: Context, vararg permissions: String
+        context: Context, permissions: Array<String>
     ): Boolean {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && permissions != null) {
             for (permission in permissions) {

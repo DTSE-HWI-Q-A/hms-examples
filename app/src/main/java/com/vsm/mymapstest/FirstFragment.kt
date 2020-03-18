@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.huawei.hms.maps.HuaweiMap
 import com.huawei.hms.maps.MapView
@@ -43,9 +44,9 @@ class FirstFragment : Fragment(), OnMapReadyCallback {
         rootView = inflater.inflate(R.layout.fragment_first, container, false)
         Log.i(TAG, "onCreate:hzj");
 
-        /*if (!common.hasPermissions(context!!, RUNTIME_PERMISSIONS)) {
-            ActivityCompat.requestPermissions(MainActivity::class.java, RUNTIME_PERMISSIONS, REQUEST_CODE);
-        }*/
+        if (!common.hasPermissions(context!!, RUNTIME_PERMISSIONS)) {
+            activity?.let { ActivityCompat.requestPermissions(it, RUNTIME_PERMISSIONS, 100) };
+        }
         //get mapview instance
         //get mapview instance
         mMapView = rootView.findViewById(R.id.mapView)
