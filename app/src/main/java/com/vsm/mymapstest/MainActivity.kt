@@ -3,6 +3,7 @@ package com.vsm.mymapstest
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.vsm.mymapstest.utils.getToken
 import kotlinx.android.synthetic.main.activity_main.*
@@ -15,7 +16,8 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-            getToken(this@MainActivity)
+            var mToken = getToken(this@MainActivity)
+            Toast.makeText(this@MainActivity, "My token: $mToken", Toast.LENGTH_LONG).show()
         }
 
     }

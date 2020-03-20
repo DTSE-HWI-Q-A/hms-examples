@@ -12,14 +12,13 @@ fun getToken(context: Context): String {
     val TAG = "getToken"
     Log.i(TAG, "get token: begin")
     var mToken = ""
-
     // get token
     object : Thread() {
         override fun run() {
+            Log.i(TAG, "get token: run")
             try {
-                val appId =
-                    AGConnectServicesConfig.fromContext(context)
-                        .getString("client/app_id")
+                val appId = AGConnectServicesConfig.fromContext(context).getString("client/app_id")
+                Log.i(TAG, "appId: $appId")
                 var pushtoken = HmsInstanceId.getInstance(context).getToken(appId, "HCM")
                 if (!TextUtils.isEmpty(pushtoken)) {
                     Log.i(TAG, "get token:$pushtoken")
