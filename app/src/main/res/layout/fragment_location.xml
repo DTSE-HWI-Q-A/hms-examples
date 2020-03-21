@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".ui.location.LocationFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="requestLocationUpdatesWithCallback" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#123456" />
+
+
+            <Button
+                android:id="@+id/location_requestLocationUpdatesWithCallback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="requestLocationUpdates with callback" />
+
+            <Button
+                android:id="@+id/location_removeLocationUpdatesWithCallback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="removeLocationUpdates with callback" />
+
+            <TextView
+                android:id="@+id/textViewLatitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textViewLongitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="TextView" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
