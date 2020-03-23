@@ -34,6 +34,11 @@
         android:name="com.vsm.mymapstest.ui.location.LocationFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_location" />
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.vsm.mymapstest.ui.push.PushFragment"
+        android:label="fragment_push"
+        tools:layout="@layout/fragment_push" />
 
     <!--<fragment
         android:id="@+id/nav_slideshow"
