@@ -39,6 +39,11 @@
         android:name="com.vsm.mymapstest.ui.push.PushFragment"
         android:label="fragment_push"
         tools:layout="@layout/fragment_push" />
+    <fragment
+        android:id="@+id/nav_account_kit"
+        android:name="com.vsm.mymapstest.ui.account.AccountKitFragment"
+        android:label="@string/menu_account_kit"
+        tools:layout="@layout/fragment_account_kit" />
 
     <!--<fragment
         android:id="@+id/nav_slideshow"
