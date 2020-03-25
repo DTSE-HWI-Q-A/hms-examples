@@ -11,23 +11,8 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_first">
 
-        <action
-            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
-            app:destination="@id/nav_home_second" />
     </fragment>
-    <fragment
-        android:id="@+id/nav_home_second"
-        android:name="com.vsm.mymapstest.ui.home.HomeSecondFragment"
-        android:label="@string/home_second"
-        tools:layout="@layout/fragment_home_second">
-        <action
-            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
-            app:destination="@id/nav_map" />
 
-        <argument
-            android:name="myArg"
-            app:argType="string" />
-    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -44,6 +29,20 @@
         android:name="com.vsm.mymapstest.ui.account.AccountKitFragment"
         android:label="@string/menu_account_kit"
         tools:layout="@layout/fragment_account_kit" />
+    <fragment
+        android:id="@+id/nav_ads_oaid"
+        android:name="com.vsm.mymapstest.ui.ads.AdsOAIDFragment"
+        android:label="fragment_ads_o_a_i_d"
+        tools:layout="@layout/fragment_ads_o_a_i_d">
+        <action
+            android:id="@+id/action_adsOAIDFragment_to_oaidFragment2"
+            app:destination="@id/oaidFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/oaidFragment"
+        android:name="com.vsm.mymapstest.ui.ads.OaidFragment"
+        android:label="fragment_oaid"
+        tools:layout="@layout/fragment_oaid" />
 
     <!--<fragment
         android:id="@+id/nav_slideshow"

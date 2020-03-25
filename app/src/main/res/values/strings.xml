@@ -26,11 +26,11 @@
     <string name="menu_location">Location Kit</string>
     <string name="menu_push">Push Kit</string>
     <string name="menu_account_kit">Account Kit</string>
+    <string name="menu_ads_oaid">Ads OAID</string>
     <!-- buttons -->
     <string name="btn_token">Token</string>
     <string name="home_second">Home Second</string>
     <!-- account kit-->
-
     <string name="hw_id">HuaweiId</string>
     <string name="hw_pay">HuaweiPay</string>
     <string name="hw_push">HuaweiPUSH</string>
@@ -44,6 +44,10 @@
     <string name="hwid_sign_in">ID-Token Mode Signln</string>
     <string name="hwid_sign_out">SignOut</string>
     <string name="hwid_revokeAccess">AuthorizationCode Mode Signln</string>
+    <!-- ads-->
+    <string name="enter_ad_identifier">OAID Sample</string>
+    <string name="ad_identifier">OAID</string>
+    <string name="disable_ad_id">Disable Ads Personalization</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

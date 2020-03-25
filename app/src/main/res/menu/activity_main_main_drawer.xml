@@ -20,5 +20,9 @@
             android:id="@+id/nav_account_kit"
             android:icon="@drawable/ic_supervised_user_circle_black_24dp"
             android:title="@string/menu_account_kit" />
+        <item
+            android:id="@+id/nav_ads_oaid"
+            android:icon="@drawable/ic_shield_check"
+            android:title="@string/menu_ads_oaid" />
     </group>
 </menu>

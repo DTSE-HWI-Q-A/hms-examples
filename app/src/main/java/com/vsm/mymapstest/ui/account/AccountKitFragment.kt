@@ -192,8 +192,6 @@ class AccountKitFragment : Fragment(), View.OnClickListener {
                 val huaweiAccount = authHuaweiIdTask.result
                 Log.i(TAG, "signIn get code success.")
                 Log.i(TAG, "ServerAuthCode: " + huaweiAccount.authorizationCode)
-                /**** english doc:For security reasons, the operation of changing the code to an AT must be performed on your server. The code is only an example and cannot be run.  */
-                /** */
             } else {
                 Log.i(
                     TAG,
