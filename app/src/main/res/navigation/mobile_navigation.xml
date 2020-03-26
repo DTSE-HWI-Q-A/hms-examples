@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_map">
+
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="com.vsm.mymapstest.ui.maps.FirstFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_first">
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.vsm.mymapstest.ui.location.LocationFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_location" />
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.vsm.mymapstest.ui.push.PushFragment"
+        android:label="fragment_push"
+        tools:layout="@layout/fragment_push" />
+    <fragment
+        android:id="@+id/nav_account_kit"
+        android:name="com.vsm.mymapstest.ui.account.AccountKitFragment"
+        android:label="@string/menu_account_kit"
+        tools:layout="@layout/fragment_account_kit" />
+    <fragment
+        android:id="@+id/nav_ads_oaid"
+        android:name="com.vsm.mymapstest.ui.ads.AdsOAIDFragment"
+        android:label="fragment_ads_o_a_i_d"
+        tools:layout="@layout/fragment_ads_o_a_i_d">
+        <action
+            android:id="@+id/action_adsOAIDFragment_to_oaidFragment2"
+            app:destination="@id/oaidFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/oaidFragment"
+        android:name="com.vsm.mymapstest.ui.ads.OaidFragment"
+        android:label="fragment_oaid"
+        tools:layout="@layout/fragment_oaid" />
+</navigation>

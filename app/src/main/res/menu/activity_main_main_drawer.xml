@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_map_black_24dp"
+            android:title="@string/menu_maps" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_navigation_black_24dp"
+            android:title="@string/menu_location" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_notification_important_black_24dp"
+            android:title="@string/menu_push" />
+        <item
+            android:id="@+id/nav_account_kit"
+            android:icon="@drawable/ic_supervised_user_circle_black_24dp"
+            android:title="@string/menu_account_kit" />
+        <item
+            android:id="@+id/nav_ads_oaid"
+            android:icon="@drawable/ic_shield_check"
+            android:title="@string/menu_ads_oaid" />
+    </group>
+</menu>

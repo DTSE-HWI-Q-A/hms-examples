@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">My Maps Test</string>
+    <string name="app_name">Codelabs m84158512</string>
     <string name="action_settings">Settings</string>
+    <string name="preference_file_key">MYTESTAPP</string>
+    <string name="preference_token_key">PUSHTOKEN</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -9,4 +11,44 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_main_main">MainMainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <!-- Menu -->
+    <string name="menu_home">Map Kit</string>
+    <string name="menu_gallery">Location</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_maps">Maps Kit</string>
+    <string name="menu_location">Location Kit</string>
+    <string name="menu_push">Push Kit</string>
+    <string name="menu_account_kit">Account Kit</string>
+    <string name="menu_ads_oaid">Ads OAID</string>
+    <!-- buttons -->
+    <string name="btn_token">Token</string>
+    <string name="home_second">Home Second</string>
+    <!-- account kit-->
+    <string name="hw_id">HuaweiId</string>
+    <string name="hw_pay">HuaweiPay</string>
+    <string name="hw_push">HuaweiPUSH</string>
+    <string name="hw_sns">HuaweiSns</string>
+    <string name="hw_location">HuaweiLocation</string>
+    <string name="hw_opendevice">HuaweiOpendevice</string>
+    <string name="hw_ppskit">HuaweiPpskit</string>
+    <string name="hw_game">HuaweiGame</string>
+    <string name="sample_description">Huawei Account Kit Demo</string>
+    <string name="sample_hwid_description">Huawei Account Usage Process</string>
+    <string name="hwid_sign_in">ID-Token Mode Signln</string>
+    <string name="hwid_sign_out">SignOut</string>
+    <string name="hwid_revokeAccess">AuthorizationCode Mode Signln</string>
+    <!-- ads-->
+    <string name="enter_ad_identifier">OAID Sample</string>
+    <string name="ad_identifier">OAID</string>
+    <string name="disable_ad_id">Disable Ads Personalization</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
