@@ -63,6 +63,7 @@ class FirstFragment : Fragment(), OnMapReadyCallback {
         mMapView!!.onCreate(mapViewBundle)
         //get map instance
         //get map instance
+
         mMapView!!.getMapAsync(this)
         return rootView
     }
@@ -126,6 +127,11 @@ class FirstFragment : Fragment(), OnMapReadyCallback {
     override fun onResume() {
         super.onResume()
         mMapView?.onResume();
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        mMapView?.onLowMemory();
     }
 
     override fun onMapReady(p0: HuaweiMap?) {

@@ -17,14 +17,12 @@ import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
-import java.nio.charset.Charset
 import java.security.interfaces.RSAPublicKey
 
 
 class IDTokenParser {
     private val MAX_PUBLIC_KEY_SIZE = 4
 
-    private val DEFAULT_CHARSET: Charset = Charset.forName("UTF-8")
 
     private var mJsonArray: JSONArray? = null
 
@@ -37,8 +35,6 @@ class IDTokenParser {
      */
     private val keyId2PublicKey: MutableMap<String, RSAPublicKey> =
         HashMap<String, RSAPublicKey>()
-
-    fun IDTokenParser() {}
 
     /**
      * Verify Id Token

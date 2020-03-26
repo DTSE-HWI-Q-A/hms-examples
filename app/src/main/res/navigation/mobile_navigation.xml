@@ -12,8 +12,6 @@
         tools:layout="@layout/fragment_first">
 
     </fragment>
-
-
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.vsm.mymapstest.ui.location.LocationFragment"
@@ -43,10 +41,4 @@
         android:name="com.vsm.mymapstest.ui.ads.OaidFragment"
         android:label="fragment_oaid"
         tools:layout="@layout/fragment_oaid" />
-
-    <!--<fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.vsm.mymapstest.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />-->
 </navigation>
