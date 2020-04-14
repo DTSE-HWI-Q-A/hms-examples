@@ -24,5 +24,10 @@
             android:id="@+id/nav_ads_oaid"
             android:icon="@drawable/ic_shield_check"
             android:title="@string/menu_ads_oaid" />
+
+        <item
+            android:id="@+id/nav_scan_kit"
+            android:icon="@drawable/ic_scanner_black_24dp"
+            android:title="@string/menu_scan_kit" />
     </group>
 </menu>

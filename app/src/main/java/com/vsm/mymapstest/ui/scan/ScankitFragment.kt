@@ -57,6 +57,7 @@ class ScankitFragment : Fragment() {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_scankit, container, false)
         mainActivity = activity as MainMainActivity
+        checkPermissions()
 
 
         return rootView

@@ -27,6 +27,7 @@
     <string name="menu_push">Push Kit</string>
     <string name="menu_account_kit">Account Kit</string>
     <string name="menu_ads_oaid">Ads OAID</string>
+    <string name="menu_scan_kit">Scan Kit</string>
     <!-- buttons -->
     <string name="btn_token">Token</string>
     <string name="home_second">Home Second</string>
