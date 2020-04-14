@@ -57,12 +57,12 @@ dependencies {
     implementation 'com.huawei.hms:maps:4.0.0.302'
     //location
     implementation 'com.huawei.hms:location:4.0.1.300'
-    //push
-    implementation 'com.huawei.hms:push:4.0.2.300'
     //hid
     implementation 'com.huawei.hms:hwid:4.0.0.300'
     //ads
     implementation 'com.huawei.hms:ads-identifier:3.4.28.305'
+    //push kit
+    implementation 'com.huawei.hms:push:4.0.3.300'
     //scan
     implementation 'com.huawei.hms:scan:1.1.3.300'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'

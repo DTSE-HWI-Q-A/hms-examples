@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_map"
-        android:name="com.vsm.mymapstest.ui.maps.FirstFragment"
+        android:name="com.vsm.mymapstest.ui.maps.MapFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_first">
 

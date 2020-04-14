@@ -11,7 +11,6 @@ import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.huawei.hms.maps.HuaweiMap
 import com.huawei.hms.maps.MapView
-import com.huawei.hms.maps.OnMapReadyCallback
 import com.vsm.mymapstest.R
 import com.vsm.mymapstest.utils.Permissions
 
@@ -19,7 +18,7 @@ import com.vsm.mymapstest.utils.Permissions
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment(), OnMapReadyCallback {
+class MapFragment : Fragment() {
 
     private val TAG = this::class.java.simpleName
 
@@ -64,7 +63,7 @@ class FirstFragment : Fragment(), OnMapReadyCallback {
         //get map instance
         //get map instance
 
-        mMapView!!.getMapAsync(this)
+        mMapView!!.getMapAsync { googleMapView -> hMap = googleMapView }
         return rootView
     }
 
@@ -134,14 +133,5 @@ class FirstFragment : Fragment(), OnMapReadyCallback {
         mMapView?.onLowMemory();
     }
 
-    override fun onMapReady(p0: HuaweiMap?) {
-        //get map instance in a callback method
-        Log.i(TAG, "onMapReady: ");
-        hMap = p0
-        //boton de ubicacion
-        hMap?.setMyLocationEnabled(true)
-        //gestos del mapa
-        hMap?.getUiSettings()?.setMyLocationButtonEnabled(true)
-    }
 
 }

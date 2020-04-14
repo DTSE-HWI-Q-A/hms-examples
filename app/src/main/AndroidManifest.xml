@@ -38,6 +38,7 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name="com.huawei.hms.hmsscankit.ScanKitActivity" />
         <service
             android:name=".ui.push.MyPushService"
             android:exported="false">
