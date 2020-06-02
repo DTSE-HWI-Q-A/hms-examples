@@ -1,13 +1,20 @@
 package com.vsm.mymapstest.ui.scan
 
-import android.Manifest
+import android.content.Context
+import android.graphics.Rect
 import android.os.Bundle
+import android.text.TextUtils
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.app.ActivityCompat
+import android.widget.FrameLayout
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
-import com.vsm.mymapstest.MainMainActivity
+import com.huawei.hms.hmsscankit.OnResultCallback
+import com.huawei.hms.hmsscankit.RemoteView
+import com.huawei.hms.ml.scan.HmsScan
+import com.vsm.mymapstest.MyApp
 import com.vsm.mymapstest.R
 
 
@@ -27,20 +34,20 @@ class ScankitFragment : Fragment() {
     private var param2: String? = null
     private val TAG = this::class.java.simpleName
     private lateinit var rootView: View
-    private lateinit var mainActivity: MainMainActivity
-    val CAMERA_REQ_CODE = 111
-    val DEFINED_CODE = 222
-    val BITMAP_CODE = 333
-    val MULTIPROCESSOR_SYN_CODE = 444
-    val MULTIPROCESSOR_ASYN_CODE = 555
-    val GENERATE_CODE = 666
-    val DECODE = 1
-    val GENERATE = 2
-    private val REQUEST_CODE_SCAN_ONE = 0X01
-    private val REQUEST_CODE_DEFINE = 0X0111
-    private val REQUEST_CODE_SCAN_MULTI = 0X011
-    val DECODE_MODE = "decode_mode"
-    val RESULT = "SCAN_RESULT"
+    val Context.myApp: MyApp get() = applicationContext as MyApp
+
+    //declare RemoteView instance
+    private var remoteView: RemoteView? = null
+
+    //declare the key ,used to get the value returned from scankit
+    val SCAN_RESULT = "scanResult"
+
+    var mScreenWidth = 0
+    var mScreenHeight = 0
+
+    //scan_view_finder width & height is  300dp
+    val SCAN_FRAME_SIZE = 300
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,8 +63,55 @@ class ScankitFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_scankit, container, false)
-        mainActivity = activity as MainMainActivity
-        checkPermissions()
+        //1.get screen density to caculate viewfinder's rect
+
+        //1.get screen density to caculate viewfinder's rect
+        val dm = resources.displayMetrics
+        val density = dm.density
+        //2.get screen size
+        //2.get screen size
+        mScreenWidth = resources.displayMetrics.widthPixels
+        mScreenHeight = resources.displayMetrics.heightPixels
+
+        val scanFrameSize = (SCAN_FRAME_SIZE * density)
+
+        //3.caculate viewfinder's rect,it's in the middle of the layout
+        //set scanning area(Optional, rect can be null,If not configure,default is in the center of layout)
+
+        //3.caculate viewfinder's rect,it's in the middle of the layout
+        //set scanning area(Optional, rect can be null,If not configure,default is in the center of layout)
+        val rect = Rect()
+        rect.left = (mScreenWidth / 2 - scanFrameSize / 2).toInt()
+        rect.right = (mScreenWidth / 2 + scanFrameSize / 2).toInt()
+        rect.top = (mScreenHeight / 2 - scanFrameSize / 2).toInt()
+        rect.bottom = (mScreenHeight / 2 + scanFrameSize / 2).toInt()
+
+        //initialize RemoteView instance, and set calling back for scanning result
+
+        //initialize RemoteView instance, and set calling back for scanning result
+        remoteView = RemoteView.Builder().setContext(activity).setBoundingBox(rect)
+            .setFormat(HmsScan.ALL_SCAN_TYPE).build()
+        // remoteView.onCreate(savedInstanceState)
+        this.remoteView?.setOnResultCallback(OnResultCallback { result -> //judge the result is effective
+            if (result != null && result.size > 0 && result[0] != null && !TextUtils.isEmpty(
+                    result[0].getOriginalValue()
+                )
+            ) {
+                Log.i(TAG, result[0].toString())
+                /*val intent = Intent()
+                intent.putExtra(SCAN_RESULT, result[0])
+                setResult(RESULT_OK, intent)
+                this@ScankitFragment.finish()*/
+            }
+        })
+        //add remoteView to framelayout
+        val params = FrameLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.MATCH_PARENT
+        )
+        val frameLayout: FrameLayout = rootView.findViewById(R.id.rim)
+        frameLayout.addView(remoteView, params)
+
 
 
         return rootView
@@ -83,14 +137,5 @@ class ScankitFragment : Fragment() {
             }
     }
 
-    private fun checkPermissions() {
-        ActivityCompat.requestPermissions(
-            mainActivity,
-            arrayOf(
-                Manifest.permission.CAMERA,
-                Manifest.permission.READ_EXTERNAL_STORAGE
-            ),
-            CAMERA_REQ_CODE
-        )
-    }
+
 }
