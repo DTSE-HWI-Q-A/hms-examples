@@ -54,9 +54,9 @@ dependencies {
     implementation 'com.auth0:jwks-rsa:0.8.3'
     //hms
     //maps
-    implementation 'com.huawei.hms:maps:4.0.0.302'
+    implementation 'com.huawei.hms:maps:4.0.1.302'
     //location
-    implementation 'com.huawei.hms:location:4.0.1.300'
+    implementation 'com.huawei.hms:location:4.0.4.300'
     //hid
     implementation 'com.huawei.hms:hwid:4.0.0.300'
     //ads
